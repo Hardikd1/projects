@@ -48,3 +48,4 @@ This project demonstrates how to build an ETL (Extract, Transform, Load) pipelin
 - **Apache Airflow**
 - **PostgreSQL**
 - **Open-Meteo API** (Requires API connection in Airflow)
+- **Docker**
