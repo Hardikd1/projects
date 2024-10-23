@@ -2,7 +2,6 @@
 
 [![Apache Airflow](https://img.shields.io/badge/Airflow-ETL-blue.svg)](https://airflow.apache.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue.svg)](https://www.postgresql.org/)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 An ETL pipeline that retrieves weather data from the Open-Meteo API, transforms it, and loads it into a PostgreSQL database for further analysis. The pipeline leverages Apache Airflow for orchestration and scheduling.
 
