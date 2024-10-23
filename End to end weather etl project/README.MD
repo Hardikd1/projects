@@ -1,133 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Data ETL Pipeline Project</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        h1 {
-            text-align: center;
-            padding-bottom: 20px;
-        }
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-        .code-block {
-            background-color: #ecf0f1;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            margin-top: 10px;
-            color: #333;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .btn:hover {
-            background-color: #2980b9;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #2c3e50;
-            color: white;
-            margin-top: 40px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Weather Data ETL Pipeline</h1>
-        
-        <h2>Project Overview</h2>
-        <p>This ETL pipeline retrieves weather data from the Open Meteo API, transforms it, and loads it into a PostgreSQL database for analysis. It's built using Apache Airflow for task orchestration and scheduling.</p>
+# Weather Data ETL Pipeline with Apache Airflow
 
-        <h2>Key Features</h2>
-        <ul>
-            <li><strong>Extract:</strong> Weather data from the Open Meteo API.</li>
-            <li><strong>Transform:</strong> Filter essential metrics (temperature, windspeed, etc.).</li>
-            <li><strong>Load:</strong> Save data into PostgreSQL.</li>
-        </ul>
+[![Apache Airflow](https://img.shields.io/badge/Airflow-ETL-blue.svg)](https://airflow.apache.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue.svg)](https://www.postgresql.org/)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-        <h2>Technologies Used</h2>
-        <ul>
-            <li>Apache Airflow</li>
-            <li>Open Meteo API</li>
-            <li>PostgreSQL</li>
-            <li>Python</li>
-        </ul>
+An ETL pipeline that retrieves weather data from the Open-Meteo API, transforms it, and loads it into a PostgreSQL database for further analysis. The pipeline leverages Apache Airflow for orchestration and scheduling.
 
-        <h2>Project Structure</h2>
-        <div class="code-block">
-            <p>. ├── dags<br>│ └── weather.py  # The main DAG script<br>└── README.md       # Project documentation</p>
-        </div>
+## Table of Contents
 
-        <h2>Setup Instructions</h2>
-        <ol>
-            <li>Install Airflow: <span class="code-block">pip install apache-airflow</span></li>
-            <li>Set up PostgreSQL and configure in Airflow with `POSTGRES_CONN_ID`.</li>
-            <li>Configure the Open Meteo API connection in Airflow using `open_meteo_api`.</li>
-            <li>Modify latitude/longitude in `weather.py` if needed.</li>
-        </ol>
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Requirements](#requirements)
+- [Setup](#setup)
+- [Running the Pipeline](#running-the-pipeline)
+- [Data Schema](#data-schema)
+- [Future Improvements](#future-improvements)
+- [License](#license)
+- [Contact Information](#contact-information)
 
-        <h2>Running the Pipeline</h2>
-        <p>To run the pipeline:</p>
-        <ul>
-            <li>Start the Airflow Scheduler: <span class="code-block">airflow scheduler</span></li>
-            <li>Start the Airflow Webserver: <span class="code-block">airflow webserver</span></li>
-            <li>Trigger the DAG manually or let it run on its daily schedule.</li>
-        </ul>
+---
 
-        <h2>Data Schema</h2>
-        <p>The data is stored in a `weather_data` table with fields:</p>
-        <ul>
-            <li>latitude (FLOAT)</li>
-            <li>longitude (FLOAT)</li>
-            <li>temperature (FLOAT)</li>
-            <li>windspeed (FLOAT)</li>
-            <li>winddirection (FLOAT)</li>
-            <li>weathercode (INT)</li>
-        </ul>
+## Overview
 
-        <h2>Future Improvements</h2>
-        <ul>
-            <li>Support for multiple locations.</li>
-            <li>Weather trend visualization over time.</li>
-            <li>Real-time dashboard integration.</li>
-        </ul>
+This project demonstrates how to build an ETL (Extract, Transform, Load) pipeline using Apache Airflow to process weather data. The pipeline fetches data from the [Open-Meteo API](https://open-meteo.com/), transforms it to retain essential weather parameters, and loads it into a PostgreSQL database for storage and analysis.
 
-        <h2>License</h2>
-        <p>This project is open source under the MIT License.</p>
+---
 
-        <a href="#" class="btn">Learn More</a>
-    </div>
+## Features
 
-    <footer>
-        <p>&copy; 2024 Weather ETL Pipeline Project</p>
-    </footer>
-</body>
-</html>
+- **Extract**: Fetches real-time weather data (temperature, wind speed, wind direction, etc.) from the [Open-Meteo API](https://open-meteo.com/).
+- **Transform**: Cleans and formats the data, extracting essential fields like temperature and wind speed.
+- **Load**: Inserts the transformed data into a PostgreSQL database table named `weather_data`.
+
+---
+
+## Technologies Used
+
+- **Apache Airflow**: Task scheduling and orchestration.
+- **Open-Meteo API**: Source of the weather data.
+- **PostgreSQL**: Database for storing weather data.
+- **Python**: Programming language used for the ETL pipeline.
+
+---
+
+## Project Structure
+
