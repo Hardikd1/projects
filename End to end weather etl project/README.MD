@@ -35,16 +35,10 @@ This project demonstrates how to build an ETL (Extract, Transform, Load) pipelin
 - **Apache Airflow**: Task scheduling and orchestration.
 - **Open-Meteo API**: Source of the weather data.
 - **PostgreSQL**: Database for storing weather data.
+- **Docker**: Containerization of the application.
+- **Astronomer**: Airflow deployment and management platform.
+- **DBeaver**: Database management tool for PostgreSQL.
 - **Python**: Programming language used for the ETL pipeline.
-
----
-
-## Project Structure
-
-
-
-
-
 
 ---
 
@@ -54,14 +48,3 @@ This project demonstrates how to build an ETL (Extract, Transform, Load) pipelin
 - **Apache Airflow**
 - **PostgreSQL**
 - **Open-Meteo API** (Requires API connection in Airflow)
-
----
-
-## Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/weather-data-etl.git
-cd weather-data-etl
-
