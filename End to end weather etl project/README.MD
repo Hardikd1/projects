@@ -13,8 +13,6 @@ An ETL pipeline that retrieves weather data from the Open-Meteo API, transforms 
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
 - [Requirements](#requirements)
-- [Setup](#setup)
-
 
 ---
 
