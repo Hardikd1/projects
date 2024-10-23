@@ -47,3 +47,27 @@ This project demonstrates how to build an ETL (Extract, Transform, Load) pipelin
 
 ## Project Structure
 
+
+
+
+
+
+---
+
+## Requirements
+
+- **Python 3.x**
+- **Apache Airflow**
+- **PostgreSQL**
+- **Open-Meteo API** (Requires API connection in Airflow)
+
+---
+
+## Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/weather-data-etl.git
+cd weather-data-etl
+
