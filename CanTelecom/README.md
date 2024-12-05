@@ -95,7 +95,7 @@ By completing this project, you will:
 ### 🧰 Prerequisites
 - Python 3.x
 - Libraries: `Faker`, `Pandas`
-- mysql or dbeaver
+- Mysql or dbeaver
 
 ### 📥 Installation
 ```bash
