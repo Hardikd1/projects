@@ -1,4 +1,4 @@
-# CanTelecommunications Data Analysis Project
+# CanTelecom SQL Project
 
 ## 📜 Project Overview
 
