@@ -1,174 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CanTelecom Database Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        code {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            padding: 2px 5px;
-            border-radius: 4px;
-            font-family: Consolas, monospace;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 20px 0;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-    </style>
-</head>
-<body>
-    <h1>CanTelecom Database Project</h1>
-    <p>This project involves the creation, analysis, and management of a fictional telecommunications company's database system. The database is designed to simulate real-world data scenarios for customers, services, subscriptions, usage, billing, and support tickets. It showcases expertise in SQL query writing, data analysis, and advanced database management techniques.</p>
+# CanTelecommunications Data Analysis Project
 
-    <h2>Project Overview</h2>
-    <ul>
-        <li><strong>Company:</strong> CanTelecom (fictional)</li>
-    </ul>
-    <p>CanTelecom offers various services such as mobile phone plans, internet services, and TV subscriptions. This project provides an end-to-end database solution, including:</p>
-    <ul>
-        <li>Database schema design and creation.</li>
-        <li>Data generation using Python.</li>
-        <li>Complex SQL queries to solve business problems.</li>
-        <li>Advanced SQL concepts like window functions and subqueries.</li>
-    </ul>
+## 📜 Project Overview
 
-    <h2>Features</h2>
-    <ul>
-        <li><strong>Database Design:</strong>
-            <ul>
-                <li>Entity Relationship Diagram (ERD) detailing relationships between tables.</li>
-                <li>Schema with six tables: <code>customers</code>, <code>services</code>, <code>subscriptions</code>, <code>service_usage</code>, <code>billing</code>, and <code>support_tickets</code>.</li>
-            </ul>
-        </li>
-        <li><strong>Data Generation:</strong>
-            <ul>
-                <li>Python script utilizing <code>Faker</code> and <code>Pandas</code> to create realistic datasets.</li>
-                <li>100,000 customers, ~250,000 subscriptions, ~1 million usage records, ~2 million billing records, ~50,000 support tickets.</li>
-            </ul>
-        </li>
-        <li><strong>SQL Queries:</strong>
-            <ul>
-                <li>Business queries to analyze data, including:
-                    <ul>
-                        <li>Customer churn rate calculation.</li>
-                        <li>Identifying top customers by usage and revenue.</li>
-                        <li>Ranking customers based on subscription and payment history.</li>
-                    </ul>
-                </li>
-                <li>Advanced SQL functions:
-                    <ul>
-                        <li>Window functions (<code>ROW_NUMBER</code>, <code>SUM OVER</code>, <code>LAG</code>).</li>
-                        <li>Subqueries for aggregations and filtering.</li>
-                        <li>Data manipulation using <code>STRING_AGG</code> and <code>COUNT</code>.</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><strong>Key Business Scenarios:</strong>
-            <ul>
-                <li>Detect churned customers.</li>
-                <li>Analyze usage patterns to optimize service offerings.</li>
-                <li>Find potential revenue growth opportunities.</li>
-            </ul>
-        </li>
-    </ul>
+Welcome to **CanTelecom SQL Project**, a hands-on data analysis project! This dataset simulates the operations of **CanTelecom**, a fictional Canadian telecommunications company. Designed for data enthusiasts, this project provides you with the tools and challenges to enhance your SQL expertise while solving real-world business problems.📊
 
-    <h2>Installation</h2>
-    <h3>Prerequisites</h3>
-    <ul>
-        <li>Python 3.x</li>
-        <li>PostgreSQL (or other SQL database systems)</li>
-        <li>Required Python libraries: <code>Faker</code>, <code>Pandas</code></li>
-    </ul>
+---
 
-    <h3>Steps</h3>
-    <ol>
-        <li>Clone the repository:
-            <pre><code>git clone https://github.com/yourusername/cantelecom-project.git
-cd cantelecom-project</code></pre>
-        </li>
-        <li>Generate the dataset using Python:
-            <pre><code>python generate_data.py</code></pre>
-        </li>
-        <li>Import the dataset into your SQL database:
-            <ul>
-                <li>Use the provided <code>.sql</code> scripts for table creation.</li>
-                <li>Use <code>LOAD DATA</code> or import tools to load CSV files.</li>
-            </ul>
-        </li>
-        <li>Execute queries using the SQL scripts provided in <code>/queries</code>.</li>
-    </ol>
+## 🚀 Features
 
-    <h2>SQL Highlights</h2>
-    <h3>Example Query: Calculate Churn Rate</h3>
-    <pre><code>WITH customer_status AS (
-    SELECT
-        c.customer_id,
-        COUNT(s.subscription_id) AS total_subscriptions,
-        SUM(CASE WHEN s.subscription_status = 'Inactive' THEN 1 ELSE 0 END) AS inactive_subscriptions
-    FROM
-        customers c
-    LEFT JOIN subscriptions s ON c.customer_id = s.customer_id
-    GROUP BY c.customer_id
-)
-SELECT
-    COUNT(*) * 100.0 / (SELECT COUNT(*) FROM customers) AS churn_rate_percentage
-FROM customer_status
-WHERE total_subscriptions = inactive_subscriptions AND total_subscriptions > 0;</code></pre>
+- **🛠 Data Generation Code**: Python scripts powered by the Faker library to create large-scale, realistic datasets.
+- **📂 SQL Table Creation Scripts**: Ready-to-use scripts to create and populate tables in MySQL.
+- **💡 Business Scenarios**: Solve SQL challenges from beginner to expert level, tailored for practical use cases.
+- **🔗 Relationships**: A well-structured relational database with meaningful connections.
 
-    <h2>Folder Structure</h2>
-    <pre><code>.
-├── data/
-│   ├── customers.csv
-│   ├── services.csv
-│   ├── subscriptions.csv
-│   ├── service_usage.csv
-│   ├── billing.csv
-│   ├── support_tickets.csv
-├── scripts/
-│   ├── generate_data.py
-│   ├── table_creation.sql
-│   ├── business_queries.sql
-├── README.md
-└── ERD.png
-    </code></pre>
+---
 
-    <h2>Author</h2>
-    <p>[Your Name](https://github.com/yourusername)</p>
-</body>
-</html>
+## 🗂 Dataset Structure
+
+### 🏷 Tables and Relationships
+
+1. **👤 Customers**  
+   - **Purpose**: Store customer details.  
+   - **Key Fields**:
+     - `customer_id` (Primary Key), `first_name`, `last_name`, `email`
+     - `address`, `city`, `province`, `postal_code`, `signup_date`
+
+2. **📄 Services**  
+   - **Purpose**: Catalog of CanTelecom's offerings.  
+   - **Key Fields**:
+     - `service_id` (Primary Key), `service_name`, `service_type`, `monthly_cost`
+
+3. **📦 Subscriptions**  
+   - **Purpose**: Manage customer subscriptions.  
+   - **Key Fields**:
+     - `subscription_id` (Primary Key), `customer_id` (Foreign Key)
+     - `service_id` (Foreign Key), `start_date`, `end_date`, `status`
+
+4. **📈 Usage**  
+   - **Purpose**: Log service usage details.  
+   - **Key Fields**:
+     - `usage_id` (Primary Key), `subscription_id` (Foreign Key)
+     - `usage_date`, `data_used_gb`, `minutes_used`
+
+5. **💳 Billing**  
+   - **Purpose**: Track billing transactions.  
+   - **Key Fields**:
+     - `billing_id` (Primary Key), `subscription_id` (Foreign Key)
+     - `billing_date`, `amount_due`, `amount_paid`, `payment_method`
+
+6. **📩 Support Tickets**  
+   - **Purpose**: Record customer support interactions.  
+   - **Key Fields**:
+     - `ticket_id` (Primary Key), `customer_id` (Foreign Key)
+     - `issue_date`, `issue_type`, `resolution_date`, `status`
+
+---
+
+##  Business Problems to Solve
+
+🟢 Easy
+ - Retrieve all active customers in a specific province (e.g., Ontario).
+ - List all services along with their monthly costs.
+ - Find the total number of customers who have subscribed to the "Mobile Plus" service.
+
+🟡 Intermediate
+ - Calculate the average amount paid per billing cycle.
+ - Identify customers who have missed payments in the last 3 months.
+ - Find the top 10 cities with the highest number of customers.
+ 
+🔴 Advanced
+ - Analyze the churn rate by identifying customers who canceled all subscriptions.
+ - Detect potential fraud through overlapping service subscriptions.
+ - Calculate the average data usage per customer by service type in the last month.
+ 
+⚫ Expert
+ - Perform a cohort analysis based on signup month to track customer retention.
+ - Identify trends in data usage by service type and province.
+ - Rank customers by total usage and identify the top 5% heavy users.
+
+
+
+## 🛠 Installation & Setup
+
+### 🧰 Prerequisites
+- Python 3.x
+- Libraries: `Faker`, `Pandas`
+- mysql or dbeaver
+
+### 📥 Installation
+```bash
+pip install faker pandas
+
+
+Note : The data is fake and does not represent its true nature 
