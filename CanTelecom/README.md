@@ -58,27 +58,37 @@ Welcome to **CanTelecom SQL Project**, a hands-on data analysis project! This da
 
 ##  Business Problems to Solve
 
-🟢 Easy
+🟢 **Easy**
  - Retrieve all active customers in a specific province (e.g., Ontario).
  - List all services along with their monthly costs.
  - Find the total number of customers who have subscribed to the "Mobile Plus" service.
 
-🟡 Intermediate
+🟡 **Intermediate**
  - Calculate the average amount paid per billing cycle.
  - Identify customers who have missed payments in the last 3 months.
  - Find the top 10 cities with the highest number of customers.
  
-🔴 Advanced
+🔴 **Advanced**
  - Analyze the churn rate by identifying customers who canceled all subscriptions.
  - Detect potential fraud through overlapping service subscriptions.
  - Calculate the average data usage per customer by service type in the last month.
  
-⚫ Expert
+⚫ **Expert**
  - Perform a cohort analysis based on signup month to track customer retention.
  - Identify trends in data usage by service type and province.
  - Rank customers by total usage and identify the top 5% heavy users.
 
+## 🎓 Learning Goals
+By completing this project, you will:
+- Master SQL joins
+- Aggregate functions
+- Window functions.
+  
+  - Gain hands-on experience with real-world data analysis scenarios.
+  - Improve problem-solving skills by tackling diverse SQL challenges.
+  - Prepare for data engineering and analyst roles with confidence.
 
+---
 
 ## 🛠 Installation & Setup
 
@@ -90,6 +100,5 @@ Welcome to **CanTelecom SQL Project**, a hands-on data analysis project! This da
 ### 📥 Installation
 ```bash
 pip install faker pandas
-
 
 Note : The data is fake and does not represent its true nature 
