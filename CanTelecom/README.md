@@ -83,10 +83,9 @@ By completing this project, you will:
 - Master SQL joins
 - Aggregate functions
 - Window functions.
-  
-  - Gain hands-on experience with real-world data analysis scenarios.
-  - Improve problem-solving skills by tackling diverse SQL challenges.
-  - Prepare for data engineering and analyst roles with confidence.
+- Gain hands-on experience with real-world data analysis scenarios.
+- Improve problem-solving skills by tackling diverse SQL challenges.
+- Prepare for data engineering and analyst roles with confidence.
 
 ---
 
